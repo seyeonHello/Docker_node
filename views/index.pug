@@ -1,0 +1,15 @@
+html
+    head
+        meta(charset='utf-8')
+        title='To Do List - node.js ver.'
+    body
+        h1=toDoListTitle
+        form(action="/add_list" method="POST")
+            p
+                input(type="text" name="username" placeholder="일정 추가")
+                input(type="submit")
+            p
+                ul
+                    each val in toDoLists
+                        li=val
+
