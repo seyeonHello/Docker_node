@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todolist
+spec:
+  selector:
+    matchLabels:
+      app: todolist
+  replicas: 2
+  template:
+    metadata:
+      labels: # labels to select/identify the deployment
+        app: todolist
+    spec:     # pod spec
+      containers:
+        - name: todolist
+          image: seyeon321/todolist_nodejs
+          ports:
+            - containerPort: 3000
